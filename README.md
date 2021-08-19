@@ -1,5 +1,9 @@
 # Webhook Sender
 
+↱ [Use without downloading it!](https://0lostconnection.github.io/Webhook-Sender-HTML/) ↰
+
+↱ [Use sem precisar baixar!](https://0lostconnection.github.io/Webhook-Sender-HTML/) ↰
+
 ### EN-US
 
 Made entirely in HTML and Javascript, utilising `JQuerry` and `Bootstrap`, the **Webhook Sender HTML** was made with the intention to facilitate the sendding of Embed Menssages both on **Discord** and **Guilded**.
