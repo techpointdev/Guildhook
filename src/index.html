@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <meta content="Guildhook" property="og:title">
+      <meta content="Easily Create webhooks for Guilded & Discord"
+        property="og:description">
+      <meta content="Guildhook: Create easy webhooks" property="og:site_name">
+      <meta content='https://guildhook.techpointch.cf/img/Twemoji_Link_Guildhook.png' property='og:image'>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Guildhook by Tech Point</title>
+      <link rel="shortcut icon" href="img/Twemoji_Link_Guildhook.png" />
+      <style type="text/css">
+         body {
+         font-family: helvetica, arial, sans-serif;
+         margin: 2em;
+         }
+         input {
+         width: 10%;
+         box-shadow: 2px 2px 15px 4px rgba(0, 0, 0, 0.20);
+         text-align: center;
+         }
+         .txtarea {
+         width: 50%;
+         box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.20);
+         text-align: left;
+         }
+         .mybtn {
+         width: 13%;
+         }
+         .txt-align {
+            text-align: center;
+         }
+      </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"crossorigin="anonymous"></script>
+      <style>
+        body {
+           background-image: url("img/guilded_bg.png");
+        }
+     </style>
+     <link rel="stylesheet" href="ghook.css">
+   </head>
+   <body>
+      <div>
+        <img src="img/guildhook_header.png" alt="Guildhook Text" class="guildhook">
+      </div>
+      <div class="container d-grid gap-3">
+         <div class="p-2 form-group">
+            <input class="mx-auto form-control col-sm-10" id="url" type="url" placeholder="Webhook URL" />
+         </div>
+         <div class="p-2 form-group">
+            <textarea class="mx-auto txtarea form-control col-sm-10" id="code" rows="10" placeholder="JSON code (Check Wiki for instructions)"></textarea>
+         </div>
+         <div class="txt-align p-2">
+            <button id="btn" class="rounded-pill mb-4 mybtn btn btn-primary " </button>Send Message</button>
+         </div>
+      </div>
+      <footer class="txt-align container">
+         <h5>Created by Tech Point using LostConnection's source code</h5>
+         <h5><a href="https://guildhook.techpointch.cf/tutorial">How to use</a> - <a href="https://github.com/techpointdev/Guildhook">Source Code</a></h5>
+      </footer>
+      <script>
+         $(document).ready(function () {
+             $('#btn').click(function () {
+                 $.ajax({
+                     url: $("#url").val(),
+                     type: "POST",
+                     data: JSON.stringify(JSON.parse($("#code").val())),
+                     complete: function () { alert("Success") },
+                     headers: {
+                         'Content-Type': 'application/json',
+                     }
+                 });
+             });
+         });
+      </script>
+   </body>
+</html>
